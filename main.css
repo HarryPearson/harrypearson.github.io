@@ -1,0 +1,203 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+
+    .grid-container {
+        display: block;
+        grid-template-columns: auto auto auto;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 1rem;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 1rem;
+    }
+}
+
+.nameText {
+
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.interestDesc {
+    font-weight: 500;
+    color: lightslategrey;
+}
+
+.projectContainer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contactContainer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.projectText {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+
+.grid-item {
+    border: 0.5px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.grid-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.projectImage {
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+
+.projectImageSection {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.projectSectionText {
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+
+}
+
+.projectTitle {
+    font-size: 1.3rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.projectDesc {
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+}
+
+.projectLib {
+    margin-top: 1rem;
+}
+
+.projectLibTag {
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 5px;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    padding-bottom: .1rem;
+}
+
+.react {
+    background: #80808038;
+}
+
+.css {
+    background: #bcffbcb8;
+}
+
+.graph {
+    background: #ff000038;
+}
+
+td {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+}
+
+table {
+
+    background: white;
+    border-radius: 10px;
+    border: 0.5px solid #e2e8f0;
+    margin: auto;
+}
+
+.border-bottom {
+    border-bottom: 0.5px solid #e2e8f0;
+}
+
+.jobTitle {
+    font-weight: 500;
+    font-size: .90rem;
+}
+
+.companyText {
+    color: lightslategrey;
+}
+
+.jobDesc {
+    font-size: 0.9rem;
+}
+
+.jobDate {
+    color: lightslategrey;
+}
+
+.compLogo {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.footer {
+    text-align: center;
+    color: lightslategrey;
+    font-weight: 500;
+}
+
+.footer>a {
+    color: lightslategrey;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.grid-container>a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
