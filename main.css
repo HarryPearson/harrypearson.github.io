@@ -20,6 +20,10 @@ body {
         grid-template-columns: auto auto auto;
         gap: 1rem;
     }
+
+    .grid-item {
+        margin-bottom:10px'
+    }
 }
 
 @media (min-width: 768px) {
@@ -28,6 +32,10 @@ body {
         display: block;
         grid-template-columns: auto auto auto;
         gap: 1rem;
+    }
+
+    .grid-item {
+        margin-bottom:10px'
     }
 }
 
