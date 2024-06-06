@@ -1,162 +1,281 @@
+<!DOCTYPE html>
 <html>
+  <style>
+    .container {
+      width: 95%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
 
-<head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <title>Harry Pearson</title>
-</head>
+    @media (min-width: 1536px) {
+      .container {
+        max-width: 1024px !important;
+      }
+    }
 
-<body>
-    <div class='container'>
-        <div class="nameText">Harry Pearson</div>
-        <div class="interestDesc">Technical Consultant focusing on ServiceNow, UI/UX, Javascript & Finance</div>
-        <div class="projectContainer">
-            <div class="projectText"> Projects</div>
-            <div class="grid-container">
-                <a href='https://store.servicenow.com/sn_appstore_store.do#!/store/application/0a04b3f1dbc4fb007ab5dd3b5e9619a2'
-                    target="_blank">
-                    <div class="grid-item">
-                        <div class="projectImageSection" style="background-color: rgba(108, 186, 248, 0.2);">
-                            <img class="projectImage" height="100" width="100"
-                                src="https://images.squarespace-cdn.com/content/v1/553ffc11e4b07277959b9ec7/1570521661352-C2PWGELGW8P1IJDD67S1/ke17ZwdGBToddI8pDm48kMpagLdZPgiW6yD5i4KsS9VZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7UnCxNA8dHvmd7460Z7fbKFSZnIIAPuX1C4iUTyn4Xd4-76gsgk4xgxAaWTBSRHt9w/logo-4.png">
-                        </div>
-                        <div class="projectSectionText">
-                            <div class="projectTitle">
-                                Codeworks
-                            </div>
-                            <div class="projectDesc">
-                                A ServiceNow Code Analysis and Best Practice Application that focuses on detecting bugs,
-                                vulnerabilities and code smells using a custom-built linting engine on the platform.
-                            </div>
-                            <div class="projectLib">
-                                <span class="projectLibTag react">Angular</span> <span
-                                    class="projectLibTag css">JS</span> <span class="projectLibTag graph">SCSS</span>
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1024px;
+      }
+    }
 
-                            </div>
-                        </div>
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+      }
+    }
 
-                    </div>
-                </a>
-                <a>
-                    <div class="grid-item">
-                        <div class="projectImageSection" style="background-color: #53cd6b30;">
-                            <svg class="projectImage" width='177' height='100' viewBox='0 0 177 100' fill='none'
-                                xmlns='http://www.w3.org/2000/svg'>
-                                <path
-                                    d='M98.9315 39.4284C96.1883 36.6852 92.9316 34.5091 89.3475 33.0245C85.7633 31.5399 81.9219 30.7758 78.0424 30.7758C74.1629 30.7758 70.3215 31.5399 66.7373 33.0245C63.1532 34.5091 59.8965 36.6852 57.1533 39.4284L78.0424 60.3174L98.9315 39.4284Z'
-                                    fill='#FFD200' />
-                                <path
-                                    d='M78.0686 60.3475C80.8118 63.0907 84.0684 65.2667 87.6526 66.7513C91.2367 68.2359 95.0782 69 98.9577 69C102.837 69 106.679 68.2359 110.263 66.7513C113.847 65.2667 117.104 63.0907 119.847 60.3475L98.9577 39.4584L78.0686 60.3475Z'
-                                    fill='#06E07F' />
-                                <path
-                                    d='M78.017 60.3429C75.2738 63.0861 72.0171 65.2621 68.433 66.7467C64.8488 68.2313 61.0074 68.9954 57.1279 68.9954C53.2484 68.9954 49.407 68.2313 45.8228 66.7467C42.2387 65.2621 38.982 63.0861 36.2388 60.3429L57.1279 39.4538L78.017 60.3429Z'
-                                    fill='#E3073C' />
-                                <path
-                                    d='M98.9831 39.433C101.726 36.6898 104.983 34.5138 108.567 33.0292C112.151 31.5446 115.993 30.7805 119.872 30.7805C123.752 30.7805 127.593 31.5446 131.177 33.0292C134.761 34.5138 138.018 36.6898 140.761 39.433L119.872 60.3221L98.9831 39.433Z'
-                                    fill='#1F84EF' /></svg>
-                        </div>
-                        <div class="projectSectionText">
-                            <div class="projectTitle">
-                                MorningCall
-                            </div>
-                            <div class="projectDesc">
-                                MorningCall is a finance portfolio tracker that focuses on your investments bringing you
-                                the latest analytics and news. This application is still very much work in progress.
-                            </div>
-                            <div class="projectLib">
-                                <span class="projectLibTag react">React</span> <span
-                                    class="projectLibTag css">CSS</span> <span
-                                    class="projectLibTag graph">GraphQL</span>
+    @media (min-width: 640px) {
+      .container {
+        max-width: 640px;
+      }
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-                            </div>
-                        </div>
-
-                    </div>
-                </a>
-
-            </div>
-        </div>
-        <div class="workContainer">
-            <div class="projectText"> Work Experience</div>
-            <table>
-                <tr>
-                    <td class="border-bottom compLogo">
-                        <img src="https://media.licdn.com/dms/image/C4D0BAQH3aoem958kMA/company-logo_200_200/0/1642083227860/highmetric_logo?e=2147483647&v=beta&t=FQp34HBDhjnmVtL0VZjlK-k9jM_3N7dFfvCMU1pKjFU" height="50"
-                            width="50">
-
-                    </td>
-                    <td class="border-bottom">
-                        <div class="jobTitle">
-                            Senior Technical Consultant
-                        </div>
-                        <div class="companyText">
-                            NewRocket
-                        </div>
-
-                    </td>
-                    <td class="jobDesc border-bottom">
-                        Building Custom Applications, Integrations and our own Store Apps.
-                    </td>
-                    <td class="jobDate border-bottom">
-                        May 2020 - <span style="font-weight: 700;">Now</span>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="border-bottom compLogo">
-                        <img src="https://yt3.ggpht.com/ytc/AKedOLRmjfGMYOFR7nUn8R0lE8Bm77uCiKGb373ecq73=s88-c-k-c0x00ffffff-no-rj" height="50"
-                            width="50">
-
-                    </td>
-                    <td class="border-bottom">
-                        <div class="jobTitle">
-                            Technical Consultant
-                        </div>
-                        <div class="companyText">
-                            Vorto
-                        </div>
-
-                    </td>
-                    <td class="jobDesc border-bottom">
-                        Building Custom Applications, Integrations and our own Store Apps.
-                    </td>
-                    <td class="jobDate border-bottom">
-                        July 2018 - May 2020
-                    </td>
-                </tr>
-                <tr>
-                    <td class="compLogo">
-                        <img src="https://media.glassdoor.com/sqll/403326/servicenow-squarelogo-1525985806171.png"
-                            height="50" width="50">
-                    </td>
-                    <td>
-                        <div class="jobTitle">
-                            Engineering Intern
-                        </div>
-                        <div class="companyText">
-                            ServiceNow
-                        </div>
-                    </td>
-                    <td class="jobDesc">
-                        Working on the internal platform, support and development of tools.
-                    </td>
-                    <td class="jobDate">
-                        July 2016 - July 2017
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="contactContainer">
-            <div class="projectText"> Contact</div>
-            If you are interested in working with me just drop me a short mail at <span
-                style="font-weight: 700;">harrypearsonbusiness@gmail.com</span>
-        </div>
-        <div class="footer">
-            <a href="https://github.com/harrypearson" target="_blank">Github</a> <span>·</span> <a
-                href="https://www.linkedin.com/in/harryjpearson/" target="_blank"> LinkedIn</a> <span>·</span> <a
-                href="https://twitter.com/_harrypearson" target="_blank">Twitter</a> <span>·</span> <a
-                href="mailto:harrypearsonbusiness@gmail.com">Email</a>
-        </div>
+  <div class="container mt-10">
+    <h1 class="text-4xl font-bold">Harry Pearson</h1>
+    <div class="mb-5 font-medium text-gray-600">
+      Technical Consultant focusing on ServiceNow, UI/UX, Javascript, Fitness & Finance
     </div>
-</body>
-
+    <h2 class="mt-8 mb-3 text-2xl font-bold">Projects</h2>
+    <div
+      class="grid grid-cols-1 gap-3 sm:grid-cols-2"
+      style="opacity: 1; transform: none"
+    >
+      <a
+        href="https://store.servicenow.com/sn_appstore_store.do#!/store/application/0a04b3f1dbc4fb007ab5dd3b5e9619a2"
+        target="_blank"
+        class="rounded-lg shadow bg-white cursor-pointer overflow-hidden transition-all duration-200 group hover:shadow-lg"
+        style="filter: grayscale(0%); transform: none; opacity: 1"
+        ><div
+          class="h-32 w-full flex justify-center items-center transition-all duration-200 transform"
+          style="background-color: #fff0d3"
+        >
+          <img
+            class="w-16 transition-transform duration-500 transform group-hover:scale-110"
+            src="images/cw.png"
+          />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center">
+            <h3 class="text-lg font-semibold text-gray-800">Codeworks</h3>
+            <img
+              class="text-red-200 ml-auto opacity-0 transform duration-200 group-hover:opacity-100 h-3"
+              src="images/arrow-right.svg"
+            />
+          </div>
+          <div class="mt-3 text-sm text-gray-700">
+            A ServiceNow Code Analysis and Best Practice Application that focuses on detecting bugs,
+                                vulnerabilities and code smells using a custom-built linting engine on the platform.
+          </div>
+          <div class="mt-2">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800 mr-2"
+              >Angular</span
+            ><span
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-green-100 text-green-800 mr-2"
+              >JS</span
+            ><span
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-blue-100 text-blue-800 mr-2"
+              >CSS</span
+            >
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-red-100 text-red-800 mr-2"
+              >UI/UX</span
+            >
+          </div>
+        </div></a
+      ><a
+        href=""
+        target=""
+        class="rounded-lg shadow bg-white cursor-pointer overflow-hidden transition-all duration-200 group hover:shadow-lg"
+        style="filter: grayscale(0%); transform: none; opacity: 1"
+        ><div
+          class="h-32 w-full flex justify-center items-center transition-all duration-200 transform"
+          style="background-color: rgba(180, 216, 165, 0.23)"
+        >
+          <img
+            class="w-16 transition-transform duration-500 transform group-hover:scale-110"
+            src="images/run.png"
+          />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center">
+            <h3 class="text-lg font-semibold text-gray-800">Stride</h3>
+            <img
+              class="text-red-200 ml-auto opacity-0 transform duration-200 group-hover:opacity-100 h-3"
+              src="images/arrow-right.svg"
+            />
+          </div>
+          <div class="mt-3 text-sm text-gray-700">
+            A web app for Runners that provides fitness tracking, workouts and race recommendations.
+          </div>
+          <div class="mt-2">
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800 mr-2"
+              >React</span
+            ><span
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-blue-100 text-blue-800 mr-2"
+              >CSS</span
+            ><span
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-indigo-100 text-indigo-800 mr-2"
+              >GraphQL</span
+            >
+          </div>
+        </div></a
+      >
+    
+    </div>
+    <h2 class="mt-8 mb-3 text-2xl font-bold">Work Experience</h2>
+    <div
+      class="inline-block w-full max-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg last:border-b-0"
+    >
+      <table class="w-full">
+        <tbody class="bg-white">
+          <tr
+            class="bg-white hover:bg-gray-100 transform duration-150 border-b last:border-0"
+          >
+            <td class="px-6 py-4 whitespace-no-wrap border-gray-200">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-10">
+                  <img
+                    width="w-10"
+                    height="w-8"
+                    src="https://media.licdn.com/dms/image/C4D0BAQH3aoem958kMA/company-logo_200_200/0/1642083227860/highmetric_logo?e=2147483647&v=beta&t=FQp34HBDhjnmVtL0VZjlK-k9jM_3N7dFfvCMU1pKjFU"
+                  >
+                    <path
+                      d="M37.5274 0L75.0548 65H0L37.5274 0Z"
+                      fill="#000000"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="ml-4">
+                  <div class="text-sm leading-5 font-medium text-gray-900">
+                    Senior Technical Consultant
+                  </div>
+                  <div class="text-sm leading-5 text-gray-500">NewRocket</div>
+                </div>
+              </div>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-no-wrap border-gray-200 hidden lg:table-cell"
+            >
+              <div class="text-sm leading-5 text-gray-800">
+                Building Custom Applications, Integrations and our own Store Apps.
+              </div>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-no-wrap border-gray-200 text-gray-600 text-sm"
+            >
+              <span class="">May 2020</span> -<!-- -->
+              <span class="font-bold">Now</span>
+            </td>
+          </tr>
+          <tr
+            class="bg-white hover:bg-gray-100 transform duration-150 border-b last:border-0"
+          >
+            <td class="px-6 py-4 whitespace-no-wrap border-gray-200">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-10">
+                  <img
+                    class="w-10 h-10"
+                    src="https://yt3.ggpht.com/ytc/AKedOLRmjfGMYOFR7nUn8R0lE8Bm77uCiKGb373ecq73=s88-c-k-c0x00ffffff-no-rj"
+                    alt="Vorto logo"
+                  />
+                </div>
+                <div class="ml-4">
+                  <div class="text-sm leading-5 font-medium text-gray-900">
+                    Technical Consultant
+                  </div>
+                  <div class="text-sm leading-5 text-gray-500">Vorto</div>
+                </div>
+              </div>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-no-wrap border-gray-200 hidden lg:table-cell"
+            >
+              <div class="text-sm leading-5 text-gray-800">
+                Building Custom Applications, Integrations and our own Store Apps.
+              </div>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-no-wrap border-gray-200 text-gray-600 text-sm"
+            >
+              <span class="">July 2018</span> -<!-- -->
+              <span class="">May 2020</span>
+            </td>
+          </tr>
+          <tr
+            class="bg-white hover:bg-gray-100 transform duration-150 border-b last:border-0"
+          >
+            <td class="px-6 py-4 whitespace-no-wrap border-gray-200">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-10">
+                  <img
+                    class="w-10 h-10"
+                    src="https://media.glassdoor.com/sqll/403326/servicenow-squarelogo-1525985806171.png"
+                    alt="ServiceNow logo"
+                  />
+                </div>
+                <div class="ml-4">
+                  <div class="text-sm leading-5 font-medium text-gray-900">
+                    Engineering Intern
+                  </div>
+                  <div class="text-sm leading-5 text-gray-500">ServiceNow</div>
+                </div>
+              </div>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-no-wrap border-gray-200 hidden lg:table-cell"
+            >
+              <div class="text-sm leading-5 text-gray-800">
+                Working on the internal platform, support and development of tools.
+              </div>
+            </td>
+            <td
+              class="px-6 py-4 whitespace-no-wrap border-gray-200 text-gray-600 text-sm"
+            >
+              <span class="">July 2016</span> -<!-- -->
+              <span class="">July 2017</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 class="mt-8 mb-3 text-2xl font-bold">Contact</h2>
+    <div class="text-base text-gray-900">
+      If you are interested in working with me just drop me a short mail at<!-- -->
+      <b>harrypearsonbusiness@gmail.com</b>
+    </div>
+    <div class="flex justify-center mt-8 mb-5 font-medium text-gray-600">
+      <a
+        target="_blank"
+        href="https://github.com/harrypearson"
+        >GitHub</a
+      ><span class="mx-2 font-bold">·</span
+      ><a
+        target="_blank"
+        href="https://www.linkedin.com/in/harryjpearson/"
+        >LinkedIn</a
+      ><span class="mx-2 font-bold">·</span
+      ><a
+        target="_blank"
+        href="https://twitter.com/_harrypearson"
+        >Twitter</a
+      >
+      <span class="mx-2 font-bold">·</span
+      ><a
+        target="_blank"
+        href="mailto:harrypearsonbusiness@gmail.com"
+        >Email</a
+      >
+    </div>
+  </div>
 </html>
