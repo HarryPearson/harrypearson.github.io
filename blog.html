@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .container {
+      width: 95%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    @media (min-width: 1536px) {
+      .container {
+        max-width: 1024px !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1024px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        max-width: 640px;
+      }
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Harry Pearson</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  </head>
+
+  <div class="container mt-10">
+    <div class="flex justify-end mb-4 font-medium text-gray-600">
+      <a href="index.html">Home</a
+      ><span class="mx-2 font-bold">·</span
+      ><a href="blog.html" class="font-bold">Blog</a>
+    </div>
+    <h1 class="text-4xl font-bold">Blog</h1>
+    <div class="mb-5 font-medium text-gray-600">
+      Thoughts on ServiceNow, engineering, fitness & finance.
+    </div>
+
+    <div id="posts-list" class="mt-8">
+      <div class="text-sm text-gray-500">Loading posts...</div>
+    </div>
+
+    <div class="flex justify-center mt-8 mb-5 font-medium text-gray-600">
+      <a target="_blank" href="https://github.com/harrypearson">GitHub</a
+      ><span class="mx-2 font-bold">·</span
+      ><a target="_blank" href="https://www.linkedin.com/in/harryjpearson/"
+        >LinkedIn</a
+      ><span class="mx-2 font-bold">·</span
+      ><a target="_blank" href="https://twitter.com/_harrypearson">Twitter</a>
+      <span class="mx-2 font-bold">·</span
+      ><a target="_blank" href="mailto:harrypearsonbusiness@gmail.com"
+        >Email</a
+      >
+    </div>
+  </div>
+
+  <script>
+    async function loadPosts() {
+      const list = document.getElementById("posts-list");
+      try {
+        const res = await fetch("posts/posts.json");
+        const posts = await res.json();
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        if (posts.length === 0) {
+          list.innerHTML =
+            '<div class="text-sm text-gray-500">No posts yet.</div>';
+          return;
+        }
+
+        list.innerHTML = posts
+          .map(
+            (post) => `
+          <a
+            href="post.html?post=${encodeURIComponent(post.slug)}"
+            class="block mb-4 rounded-lg shadow bg-white cursor-pointer overflow-hidden transition-all duration-200 hover:shadow-lg"
+          >
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-gray-800">${
+                post.title
+              }</h3>
+              <div class="mt-1 text-sm text-gray-500">${post.date}</div>
+              <div class="mt-3 text-sm text-gray-700">${post.excerpt}</div>
+            </div>
+          </a>
+        `
+          )
+          .join("");
+      } catch (err) {
+        list.innerHTML =
+          '<div class="text-sm text-red-600">Could not load posts.</div>';
+      }
+    }
+
+    loadPosts();
+  </script>
+</html>

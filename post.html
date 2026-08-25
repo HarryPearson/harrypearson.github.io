@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .container {
+      width: 95%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    @media (min-width: 1536px) {
+      .container {
+        max-width: 1024px !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1024px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        max-width: 640px;
+      }
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post - Harry Pearson</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+
+  <div class="container mt-10">
+    <div class="flex justify-end mb-4 font-medium text-gray-600">
+      <a href="index.html">Home</a
+      ><span class="mx-2 font-bold">·</span
+      ><a href="blog.html">Blog</a>
+    </div>
+
+    <h1 id="post-title" class="text-4xl font-bold">Loading...</h1>
+    <div id="post-date" class="mb-8 font-medium text-gray-600"></div>
+
+    <div
+      id="post-body"
+      class="prose prose-gray max-w-none prose-headings:font-bold prose-a:text-blue-600"
+    ></div>
+
+    <div class="mt-10">
+      <a href="blog.html" class="font-medium text-gray-600">&larr; Back to Blog</a>
+    </div>
+  </div>
+
+  <script>
+    async function loadPost() {
+      const titleEl = document.getElementById("post-title");
+      const dateEl = document.getElementById("post-date");
+      const bodyEl = document.getElementById("post-body");
+      const slug = new URLSearchParams(window.location.search).get("post");
+
+      if (!slug) {
+        titleEl.textContent = "Post not found";
+        bodyEl.innerHTML = "<p>No post was specified.</p>";
+        return;
+      }
+
+      try {
+        const res = await fetch("posts/posts.json");
+        const posts = await res.json();
+        const meta = posts.find((p) => p.slug === slug);
+
+        if (!meta) {
+          titleEl.textContent = "Post not found";
+          bodyEl.innerHTML = "<p>This post does not exist.</p>";
+          return;
+        }
+
+        document.title = meta.title + " - Harry Pearson";
+        titleEl.textContent = meta.title;
+        dateEl.textContent = meta.date;
+
+        const mdRes = await fetch(`posts/${slug}.md`);
+        const md = await mdRes.text();
+        bodyEl.innerHTML = marked.parse(md);
+      } catch (err) {
+        titleEl.textContent = "Something went wrong";
+        bodyEl.innerHTML = "<p>Could not load this post.</p>";
+      }
+    }
+
+    loadPost();
+  </script>
+</html>
