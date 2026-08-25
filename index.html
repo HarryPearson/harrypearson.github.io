@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harry Pearson</title>
     <meta
@@ -52,15 +59,28 @@
       }
     </style>
   </head>
-  <body>
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
   <div class="container mt-10">
-    <div class="flex justify-end mb-4 font-medium text-gray-600">
+    <div class="flex justify-end items-center mb-4 font-medium text-gray-600 dark:text-gray-400">
       <a href="index.html" class="font-bold">Home</a
       ><span class="mx-2 font-bold">·</span
       ><a href="blog.html">Blog</a>
+      <button
+        type="button"
+        onclick="toggleTheme()"
+        aria-label="Toggle dark mode"
+        class="ml-4 inline-flex items-center justify-center rounded-md p-1 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+      >
+        <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+        <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      </button>
     </div>
     <h1 class="text-4xl font-bold">Harry Pearson</h1>
-    <div class="mb-5 font-medium text-gray-600">
+    <div class="mb-5 font-medium text-gray-600 dark:text-gray-400">
       Technical Consultant focusing on ServiceNow, UI/UX, Javascript, Fitness & Finance
     </div>
     <h2 class="mt-8 mb-3 text-2xl font-bold">Projects</h2>
@@ -71,7 +91,7 @@
       <a
         href="https://store.servicenow.com/sn_appstore_store.do#!/store/application/0a04b3f1dbc4fb007ab5dd3b5e9619a2"
         target="_blank"
-        class="rounded-lg shadow bg-white cursor-pointer overflow-hidden transition-all duration-200 group hover:shadow-lg"
+        class="rounded-lg shadow bg-white dark:bg-gray-800 cursor-pointer overflow-hidden transition-all duration-200 group hover:shadow-lg"
         style="filter: grayscale(0%); transform: none; opacity: 1"
         ><div
           class="h-32 w-full flex justify-center items-center transition-all duration-200 transform"
@@ -87,7 +107,7 @@
         </div>
         <div class="p-6">
           <div class="flex items-center">
-            <h3 class="text-lg font-semibold text-gray-800">Codeworks</h3>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Codeworks</h3>
             <img
               class="text-red-200 ml-auto opacity-0 transform duration-200 group-hover:opacity-100 h-3"
               src="images/arrow-right.svg"
@@ -96,23 +116,23 @@
               alt=""
             />
           </div>
-          <div class="mt-3 text-sm text-gray-700">
+          <div class="mt-3 text-sm text-gray-700 dark:text-gray-300">
             A ServiceNow Code Analysis and Best Practice Application that focuses on detecting bugs,
                                 vulnerabilities and code smells using a custom-built linting engine on the platform.
           </div>
           <div class="mt-2">
             <span
-              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800 mr-2"
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 mr-2"
               >Angular</span
             ><span
-              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-green-100 text-green-800 mr-2"
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 mr-2"
               >JS</span
             ><span
-              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-blue-100 text-blue-800 mr-2"
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mr-2"
               >CSS</span
             >
             <span
-              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-red-100 text-red-800 mr-2"
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 mr-2"
               >UI/UX</span
             >
           </div>
@@ -120,7 +140,7 @@
       ><a
         href=""
         target=""
-        class="rounded-lg shadow bg-white cursor-pointer overflow-hidden transition-all duration-200 group hover:shadow-lg"
+        class="rounded-lg shadow bg-white dark:bg-gray-800 cursor-pointer overflow-hidden transition-all duration-200 group hover:shadow-lg"
         style="filter: grayscale(0%); transform: none; opacity: 1"
         ><div
           class="h-32 w-full flex justify-center items-center transition-all duration-200 transform"
@@ -136,7 +156,7 @@
         </div>
         <div class="p-6">
           <div class="flex items-center">
-            <h3 class="text-lg font-semibold text-gray-800">Stride</h3>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Stride</h3>
             <img
               class="text-red-200 ml-auto opacity-0 transform duration-200 group-hover:opacity-100 h-3"
               src="images/arrow-right.svg"
@@ -145,32 +165,32 @@
               alt=""
             />
           </div>
-          <div class="mt-3 text-sm text-gray-700">
+          <div class="mt-3 text-sm text-gray-700 dark:text-gray-300">
             A web app for Runners that provides fitness tracking, workouts and race recommendations.
           </div>
           <div class="mt-2">
             <span
-              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800 mr-2"
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 mr-2"
               >React</span
             ><span
-              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-blue-100 text-blue-800 mr-2"
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mr-2"
               >CSS</span
             ><span
-              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-indigo-100 text-indigo-800 mr-2"
+              class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium leading-4 bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 mr-2"
               >GraphQL</span
             >
           </div>
         </div></a
       >
-    
+
     </div>
     <h2 class="mt-8 mb-3 text-2xl font-bold">Work Experience</h2>
-    <div class="bg-white shadow sm:rounded-lg overflow-hidden divide-y divide-gray-200">
+    <div class="bg-white dark:bg-gray-800 shadow sm:rounded-lg overflow-hidden divide-y divide-gray-200 dark:divide-gray-700">
       <div
-        class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-0 p-4 sm:px-6 sm:py-4 hover:bg-gray-100 transform duration-150"
+        class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-0 p-4 sm:px-6 sm:py-4 hover:bg-gray-100 dark:hover:bg-gray-700 transform duration-150"
       >
         <div class="flex items-center flex-1 min-w-0">
-          <div class="flex-shrink-0 w-10">
+          <div class="flex-shrink-0 dark:bg-white dark:rounded dark:p-1">
             <img
               class="w-10 h-10"
               width="40"
@@ -180,25 +200,25 @@
             />
           </div>
           <div class="ml-4">
-            <div class="text-sm leading-5 font-medium text-gray-900">
+            <div class="text-sm leading-5 font-medium text-gray-900 dark:text-gray-100">
               Senior Technical Consultant
             </div>
-            <div class="text-sm leading-5 text-gray-500">NewRocket</div>
+            <div class="text-sm leading-5 text-gray-500 dark:text-gray-400">NewRocket</div>
           </div>
         </div>
-        <div class="hidden lg:block flex-1 px-4 text-sm leading-5 text-gray-800">
+        <div class="hidden lg:block flex-1 px-4 text-sm leading-5 text-gray-800 dark:text-gray-300">
           Building Custom Applications, Integrations and our own Store Apps.
         </div>
-        <div class="text-sm text-gray-600 whitespace-nowrap sm:flex-shrink-0">
+        <div class="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap sm:flex-shrink-0">
           <span>May 2020</span> -<!-- -->
           <span class="font-bold">Now</span>
         </div>
       </div>
       <div
-        class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-0 p-4 sm:px-6 sm:py-4 hover:bg-gray-100 transform duration-150"
+        class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-0 p-4 sm:px-6 sm:py-4 hover:bg-gray-100 dark:hover:bg-gray-700 transform duration-150"
       >
         <div class="flex items-center flex-1 min-w-0">
-          <div class="flex-shrink-0 w-10">
+          <div class="flex-shrink-0 dark:bg-white dark:rounded dark:p-1">
             <img
               class="w-10 h-10"
               width="40"
@@ -208,25 +228,25 @@
             />
           </div>
           <div class="ml-4">
-            <div class="text-sm leading-5 font-medium text-gray-900">
+            <div class="text-sm leading-5 font-medium text-gray-900 dark:text-gray-100">
               Technical Consultant
             </div>
-            <div class="text-sm leading-5 text-gray-500">Vorto</div>
+            <div class="text-sm leading-5 text-gray-500 dark:text-gray-400">Vorto</div>
           </div>
         </div>
-        <div class="hidden lg:block flex-1 px-4 text-sm leading-5 text-gray-800">
+        <div class="hidden lg:block flex-1 px-4 text-sm leading-5 text-gray-800 dark:text-gray-300">
           Building Custom Applications, Integrations and our own Store Apps.
         </div>
-        <div class="text-sm text-gray-600 whitespace-nowrap sm:flex-shrink-0">
+        <div class="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap sm:flex-shrink-0">
           <span>July 2018</span> -<!-- -->
           <span>May 2020</span>
         </div>
       </div>
       <div
-        class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-0 p-4 sm:px-6 sm:py-4 hover:bg-gray-100 transform duration-150"
+        class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-0 p-4 sm:px-6 sm:py-4 hover:bg-gray-100 dark:hover:bg-gray-700 transform duration-150"
       >
         <div class="flex items-center flex-1 min-w-0">
-          <div class="flex-shrink-0 w-16">
+          <div class="flex-shrink-0 w-16 dark:bg-white dark:rounded dark:p-1">
             <img
               class="h-8 w-auto"
               src="images/servicenow-logo.svg"
@@ -234,27 +254,27 @@
             />
           </div>
           <div class="ml-4">
-            <div class="text-sm leading-5 font-medium text-gray-900">
+            <div class="text-sm leading-5 font-medium text-gray-900 dark:text-gray-100">
               Engineering Intern
             </div>
-            <div class="text-sm leading-5 text-gray-500">ServiceNow</div>
+            <div class="text-sm leading-5 text-gray-500 dark:text-gray-400">ServiceNow</div>
           </div>
         </div>
-        <div class="hidden lg:block flex-1 px-4 text-sm leading-5 text-gray-800">
+        <div class="hidden lg:block flex-1 px-4 text-sm leading-5 text-gray-800 dark:text-gray-300">
           Working on the internal platform, support and development of tools.
         </div>
-        <div class="text-sm text-gray-600 whitespace-nowrap sm:flex-shrink-0">
+        <div class="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap sm:flex-shrink-0">
           <span>July 2016</span> -<!-- -->
           <span>July 2017</span>
         </div>
       </div>
     </div>
     <h2 class="mt-8 mb-3 text-2xl font-bold">Contact</h2>
-    <div class="text-base text-gray-900">
+    <div class="text-base text-gray-900 dark:text-gray-100">
       If you are interested in working with me just drop me a short mail at<!-- -->
       <b>harrypearsonbusiness@gmail.com</b>
     </div>
-    <div class="flex justify-center mt-8 mb-5 font-medium text-gray-600">
+    <div class="flex justify-center mt-8 mb-5 font-medium text-gray-600 dark:text-gray-400">
       <a
         target="_blank"
         href="https://github.com/harrypearson"
@@ -278,5 +298,11 @@
       >
     </div>
   </div>
+  <script>
+    function toggleTheme() {
+      var isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    }
+  </script>
   </body>
 </html>

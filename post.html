@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post - Harry Pearson</title>
     <meta name="description" content="A blog post by Harry Pearson." />
@@ -46,23 +53,36 @@
       }
     </style>
   </head>
-  <body>
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
   <div class="container mt-10">
-    <div class="flex justify-end mb-4 font-medium text-gray-600">
+    <div class="flex justify-end items-center mb-4 font-medium text-gray-600 dark:text-gray-400">
       <a href="index.html">Home</a
       ><span class="mx-2 font-bold">·</span
       ><a href="blog.html">Blog</a>
+      <button
+        type="button"
+        onclick="toggleTheme()"
+        aria-label="Toggle dark mode"
+        class="ml-4 inline-flex items-center justify-center rounded-md p-1 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+      >
+        <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+        <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      </button>
     </div>
 
     <h1 id="post-title" class="text-4xl font-bold">Loading...</h1>
-    <div id="post-date" class="mb-8 font-medium text-gray-600"></div>
+    <div id="post-date" class="mb-8 font-medium text-gray-600 dark:text-gray-400"></div>
 
     <div
       id="post-body"
-      class="prose prose-gray max-w-none prose-headings:font-bold prose-a:text-blue-600"
+      class="prose prose-gray dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400"
     ></div>
     <noscript>
-      <div class="text-sm text-gray-700">
+      <div class="text-sm text-gray-700 dark:text-gray-300">
         This page needs JavaScript to render the post. You can view the raw
         markdown source directly in the
         <a href="posts/">posts</a> folder.
@@ -70,11 +90,16 @@
     </noscript>
 
     <div class="mt-10">
-      <a href="blog.html" class="font-medium text-gray-600">&larr; Back to Blog</a>
+      <a href="blog.html" class="font-medium text-gray-600 dark:text-gray-400">&larr; Back to Blog</a>
     </div>
   </div>
 
   <script>
+    function toggleTheme() {
+      var isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    }
+
     async function loadPost() {
       const titleEl = document.getElementById("post-title");
       const dateEl = document.getElementById("post-date");
