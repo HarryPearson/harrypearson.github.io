@@ -1,45 +1,58 @@
 <!DOCTYPE html>
-<html>
-  <style>
-    .container {
-      width: 95%;
-      margin-right: auto;
-      margin-left: auto;
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-
-    @media (min-width: 1536px) {
-      .container {
-        max-width: 1024px !important;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .container {
-        max-width: 1024px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        max-width: 768px;
-      }
-    }
-
-    @media (min-width: 640px) {
-      .container {
-        max-width: 640px;
-      }
-    }
-  </style>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog - Harry Pearson</title>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  </head>
+    <meta
+      name="description"
+      content="Blog posts from Harry Pearson on ServiceNow, engineering, fitness and finance."
+    />
+    <meta property="og:title" content="Blog - Harry Pearson" />
+    <meta
+      property="og:description"
+      content="Blog posts from Harry Pearson on ServiceNow, engineering, fitness and finance."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://harrypearson.co.uk/blog.html" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <style>
+      .container {
+        width: 95%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
 
+      @media (min-width: 1536px) {
+        .container {
+          max-width: 1024px !important;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          max-width: 1024px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 768px;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          max-width: 640px;
+        }
+      }
+    </style>
+  </head>
+  <body>
   <div class="container mt-10">
     <div class="flex justify-end mb-4 font-medium text-gray-600">
       <a href="index.html">Home</a
@@ -54,6 +67,12 @@
     <div id="posts-list" class="mt-8">
       <div class="text-sm text-gray-500">Loading posts...</div>
     </div>
+    <noscript>
+      <div class="mt-8 text-sm text-gray-700">
+        This page needs JavaScript to load the post list. You can view the
+        raw list at <a href="posts/posts.json">posts/posts.json</a>.
+      </div>
+    </noscript>
 
     <div class="flex justify-center mt-8 mb-5 font-medium text-gray-600">
       <a target="_blank" href="https://github.com/harrypearson">GitHub</a
@@ -109,4 +128,5 @@
 
     loadPosts();
   </script>
+  </body>
 </html>

@@ -1,46 +1,52 @@
 <!DOCTYPE html>
-<html>
-  <style>
-    .container {
-      width: 95%;
-      margin-right: auto;
-      margin-left: auto;
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-
-    @media (min-width: 1536px) {
-      .container {
-        max-width: 1024px !important;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .container {
-        max-width: 1024px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .container {
-        max-width: 768px;
-      }
-    }
-
-    @media (min-width: 640px) {
-      .container {
-        max-width: 640px;
-      }
-    }
-  </style>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post - Harry Pearson</title>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  </head>
+    <meta name="description" content="A blog post by Harry Pearson." />
+    <meta property="og:title" content="Blog - Harry Pearson" />
+    <meta property="og:description" content="A blog post by Harry Pearson." />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <style>
+      .container {
+        width: 95%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
 
+      @media (min-width: 1536px) {
+        .container {
+          max-width: 1024px !important;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          max-width: 1024px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 768px;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          max-width: 640px;
+        }
+      }
+    </style>
+  </head>
+  <body>
   <div class="container mt-10">
     <div class="flex justify-end mb-4 font-medium text-gray-600">
       <a href="index.html">Home</a
@@ -55,6 +61,13 @@
       id="post-body"
       class="prose prose-gray max-w-none prose-headings:font-bold prose-a:text-blue-600"
     ></div>
+    <noscript>
+      <div class="text-sm text-gray-700">
+        This page needs JavaScript to render the post. You can view the raw
+        markdown source directly in the
+        <a href="posts/">posts</a> folder.
+      </div>
+    </noscript>
 
     <div class="mt-10">
       <a href="blog.html" class="font-medium text-gray-600">&larr; Back to Blog</a>
@@ -100,4 +113,5 @@
 
     loadPost();
   </script>
+  </body>
 </html>
